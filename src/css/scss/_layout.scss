@@ -1,0 +1,16 @@
+.flex {
+    display: flex;
+}
+.space {
+    width:100%;
+    justify-content: space-between;
+}
+.container {
+    width:100%;
+    padding:0 25px;
+    @media screen and (min-width: 768px) {
+        max-width:730px; 
+        margin:0 auto;
+    }
+}
+

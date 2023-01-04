@@ -1,0 +1,28 @@
+.about {
+    .card {
+        align-items: flex-start;
+        text-align: left;
+        padding:30px 25px;
+        .btn {
+            width: 155px;
+            &.out {
+                background-color:var(--Dark-gray);
+            }
+        }
+    }
+    .outstock {
+        opacity:0.5;
+    }
+    .number_left {
+        display: flex;
+        align-items: center;
+        gap:10px;
+    }
+    .pledge {
+        margin-bottom:0;
+        top:0;
+    }
+    .pledge_amout {
+        color:var(--Moderate-cyan);
+    }
+}

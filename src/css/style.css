@@ -1,0 +1,306 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-family: "Commissioner", sans-serif;
+  color: var(--Dark-gray);
+  background-color: var(--body-bg);
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+h1, h2, h3, h4, h5, h6 {
+  color: var(--Black);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  /*Goggle Font*/
+  /*@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+  --body-font:'Commissioner', sans-serif;*/
+  /*Color*/
+  --Moderate-cyan: hsl(176, 50%, 47%);
+  --Dark-cyan: hsl(176, 72%, 28%);
+  --body-bg:#FAFAFA;
+  --Black: hsl(0, 0%, 0%);
+  --Dark-gray: hsl(0, 0%, 48%);
+  --border-card:#F2F2F2;
+  --light-gray: rgb(232, 232, 232);
+}
+
+header {
+  padding-top: 30px;
+  min-height: 300px;
+  background-image: url("/src/img/image-hero-mobile.jpg");
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  header {
+    min-height: 400px;
+    background-image: url("/src/img/image-hero-desktop.jpg");
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.space {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  padding: 0 25px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  margin-bottom: 25px;
+  background-color: white;
+  top: -55px;
+  position: relative;
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  padding: 40px 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  font-size: 15px;
+}
+@media screen and (min-width: 575px) {
+  .card {
+    padding: 55px 50px;
+    text-align: left;
+    align-items: unset;
+  }
+  .card.master {
+    text-align: center;
+  }
+  .card .flex {
+    justify-content: space-between;
+  }
+}
+.card .master {
+  padding-top: 55px;
+}
+.card .master_logo {
+  position: absolute;
+  top: -32px;
+  width: 60px;
+  height: 60px;
+}
+@media screen and (min-width: 575px) {
+  .card .master_logo {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.card .btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 15px;
+  color: White;
+}
+.card .btn.cyan {
+  width: 215px;
+  background-color: var(--Moderate-cyan);
+}
+.card .btn.bookmark {
+  background-color: var(--light-gray);
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+@media screen and (min-width: 575px) {
+  .card .btn.bookmark {
+    width: 170px;
+  }
+}
+.card .btn.bookmark span {
+  display: none;
+  font-size: 15px;
+  padding: 15px;
+  color: var(--Dark-gray);
+}
+@media screen and (min-width: 575px) {
+  .card .btn.bookmark span {
+    display: block;
+  }
+}
+.card span {
+  display: block;
+  color: var(--Black);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+.card .card_stat {
+  font-weight: 500;
+  position: relative;
+}
+@media screen and (min-width: 575px) {
+  .card .card_stat:nth-child(3)::after {
+    border-right: none;
+  }
+}
+.card .card_stat::after {
+  content: "";
+  position: relative;
+  left: 15%;
+  display: block;
+  border-bottom: 2px solid var(--light-gray);
+  margin-top: 25px;
+  width: 70%;
+}
+@media screen and (min-width: 575px) {
+  .card .card_stat::after {
+    border-right: 2px solid var(--light-gray);
+    height: 100%;
+    left: 100%;
+    border-bottom: none;
+    width: 1px;
+    margin-top: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .stat-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .stat-card .card_stat {
+    flex: 1;
+  }
+}
+
+.goalbar {
+  border-radius: 10px;
+  width: 100%;
+  height: 15px;
+  background-color: var(--body-bg);
+}
+.goalbar .goalbar-color {
+  border-radius: 10px;
+  width: 75%;
+  height: 15px;
+  background-color: var(--Moderate-cyan);
+}
+
+.gap-btn {
+  gap: 10px;
+}
+
+.pledge .space {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media screen and (min-width: 575px) {
+  .pledge .space {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .pledge_title {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.about .card {
+  align-items: flex-start;
+  text-align: left;
+  padding: 30px 25px;
+}
+.about .card .btn {
+  width: 155px;
+}
+.about .card .btn.out {
+  background-color: var(--Dark-gray);
+}
+.about .outstock {
+  opacity: 0.5;
+}
+.about .number_left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about .pledge {
+  margin-bottom: 0;
+  top: 0;
+}
+.about .pledge_amout {
+  color: var(--Moderate-cyan);
+}/*# sourceMappingURL=style.css.map */
