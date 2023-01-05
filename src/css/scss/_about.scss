@@ -13,11 +13,6 @@
     .outstock {
         opacity:0.5;
     }
-    .number_left {
-        display: flex;
-        align-items: center;
-        gap:10px;
-    }
     .pledge {
         margin-bottom:0;
         top:0;
@@ -25,4 +20,9 @@
     .pledge_amout {
         color:var(--Moderate-cyan);
     }
+}
+.number_left {
+    display: flex;
+    align-items: center;
+    gap:10px;
 }
